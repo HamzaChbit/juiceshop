@@ -35,7 +35,7 @@ const totalPrice = items.reduce((total, item) => {
       </Link>
   
 
-      <ul   className='flex justify-between  gap-3 text-xl font-md  hidden cursor-pointer md:block ' >
+      <ul   className=' justify-between  gap-3 text-xl font-md  hidden cursor-pointer md:block ' >
         <Link href='/shop' className='pr-4  hover:text-green ' >Shop</Link>
         <Link href='/subscription'  className='pr-4  hover:text-green' >Subscription</Link>
         <Link href='/about'  className='pr-4  hover:text-green ' >About Us</Link>
