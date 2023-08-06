@@ -50,7 +50,7 @@ const onAddToCart= () => {
                 />
               </Disclosure.Button>
               <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
-              I'm a product detail. I'm a great place to add more information 
+              Im a product detail. Im a great place to add more information 
               about your product such as sizing, material, care and cleaning 
               instructions. This is also a great space to write what makes this
                product special and how your customers can benefit from this item.

@@ -47,8 +47,7 @@ const totalPrice = items.reduce((total, item) => {
 
       <div  className='text-green relative  cursor-pointer  ' onClick={()=>setMounted(true)}>
 
-      < BiShoppi
-      ngBag  size={40} />
+      < BiShoppingBag size={40} />
       <span className='h-2 w-2 absolute top-3 left-4 text-black ' >
         {cart.items.length}
       </span>
