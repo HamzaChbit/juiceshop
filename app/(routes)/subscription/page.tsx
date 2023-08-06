@@ -2,9 +2,6 @@
 import React from 'react'
 import getProducts from '../../../actions/get-products'
 import FeaturedHome from '../../../components/FeaturedHome'
-import getCategories from '../../../actions/get-categories'
-import getCategory from '../../../actions/get-category'
-import getProduct from '../../../actions/get-product'
 
 
 export const revalidate=0;

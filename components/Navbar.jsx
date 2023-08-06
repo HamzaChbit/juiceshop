@@ -101,13 +101,13 @@ const totalPrice = items.reduce((total, item) => {
     }
     {
       mounted && (
-        <div className='fixed md:w-[30%] w-[70%]  right-0 top-0 z-10 transition-2xl  h-auto bg-white' >
+        <div className='fixed md:w-[30%] w-[70%]  right-0 top-0 z-10 transition-2xl  h-screen bg-white' >
           <div className='flex flex-col justify-between' >
      <div className='flex justify-around flex-row    px-5 py-10 bg-bgfooter'>
             <GrClose  size={33} onClick={()=>setMounted(false)}  className='text-green  cursor-pointer' />
             <h1 className='text-3xl text-green font-bold ' >Cart</h1>
             </div>
-            <div className='flex  min-h-[70vh]   max-h-[70vh]  overflow-x-hidden' >
+            <div className='flex  min-h-[60vh]   max-h-[60vh]  overflow-x-hidden' >
             {cart.items.length === 0 &&  <p  className='text-black font-bold flex w-full h-[60vh] items-center justify-center text-2xl' >No  items added to cart</p>}
           <ul  >{cart.items.map((item)=> (
                     <CartItem  key={item.id}  data={item}  />

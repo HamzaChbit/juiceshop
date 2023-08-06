@@ -3,10 +3,15 @@ import React from 'react'
 import getProducts from '../../../actions/get-products'
 import FeaturedBanner from '../../../components/FeaturedBanner '
 
+export const revalidate=0;
+
 const PageShop = async () => {
 
 
-  const products = await getProducts({isFeatured:true})
+  const products = await getProducts({
+    categoryId: '4c8f02be-399c-4f43-a062-daab8e42936c',
+    isFeatured:true
+  })
  
   return (
     
