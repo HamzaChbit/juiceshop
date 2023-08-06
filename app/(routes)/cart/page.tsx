@@ -1,24 +1,44 @@
 'use client'
-import React from 'react'
+import React, { useEffect } from 'react'
 import useCart from '../../../context/use-cart'
 import CartItem from '../../../components/CartItem'
 import { BsFillLockFill } from 'react-icons/bs'
+import { toast } from 'react-hot-toast'
 import axios from 'axios'
-import { useRouter } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 
 const PageContact = () => {
     const cart = useCart()
+    const searchParams = useSearchParams();
+    const items = useCart((state) => state.items);
+    const removeAll = useCart((state) => state.removeAll);
     const totalPrice = cart.items.reduce((total, item) => {
         return total + Number(item.price)
       }, 0);
       const route = useRouter()
+      useEffect(() => {
+        if (searchParams.get('success')) {
+          toast.success('Payment completed.');
+          removeAll();
+        }
+    
+        if (searchParams.get('canceled')) {
+          toast.error('Something went wrong.');
+        }
+      }, [searchParams, removeAll]);
+
+
+
+
+
       const onCheckout = async () => {
         const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/checkout`, {
-          productIds: cart.items.map((item) => item.id)
+          productIds: items.map((item) => item.id)
         });
     
         window.location = response.data.url;
       }
+    
 
       if(cart.items.length === 0) {
 route.push('/shop')
