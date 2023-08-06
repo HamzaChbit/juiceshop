@@ -7,11 +7,18 @@ module.exports = {
   ],
   theme: {
     extend: {
+      
+
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'back':"url('/image/Background.webp')",
+        
       },
+      colors:{
+        hero : '#f9f9f9',
+        green : '#3d5a23',
+        navbar:'#d6e9c6',
+        bgfooter : '#e2e2f2'
+      }
     },
   },
   plugins: [],
