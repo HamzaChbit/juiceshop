@@ -7,7 +7,7 @@ import { toast } from 'react-hot-toast'
 import axios from 'axios'
 import { useRouter, useSearchParams } from 'next/navigation'
 
-const PageContact = () => {
+const PageCart = () => {
     const cart = useCart()
     const searchParams = useSearchParams();
     const items = useCart((state) => state.items);
@@ -84,4 +84,4 @@ route.push('/shop')
     </div>
   )
 }
-export default PageContact
+export default PageCart
