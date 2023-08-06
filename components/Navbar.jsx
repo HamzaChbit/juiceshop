@@ -1,23 +1,23 @@
 'use client'
-import Image from 'next/image';
+
 import Link from 'next/link';
 import React, { useState } from 'react'
 import {  BiShoppingBag } from 'react-icons/bi';
 import useCart from '../context/use-cart';
 import CartItem from './CartItem';
 import { GrClose } from 'react-icons/gr';
+import { data } from 'autoprefixer';
 
 const Navbar = () => {
   const [showMenu,setShowMenu] = useState(false)
   const [mounted ,setMounted] = useState(false)
   const items = useCart((state) => state.items);
  
-
-const cart = useCart()
-const totalPrice = items.reduce((total, item) => {
-  return total + Number(item.price)
+ 
+  const cart = useCart()
+  const totalPrice = items.reduce((total, item) => {
+    return total + item.price * item.quantity;
 }, 0);
-
 
 
 
@@ -123,6 +123,7 @@ const totalPrice = items.reduce((total, item) => {
     <div className='w-[800px]     px-5 py-1 '>
                     <h1 className='text-3xl'>Subtotal</h1>
                     <h1 className='text-3xl'>${totalPrice}</h1>
+                   
 
                   </div><hr className='mb-4 bg-green h-0.5' /><div className='flex  bottom-0 h-full justify-center flex-col mb-10'>
 

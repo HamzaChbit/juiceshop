@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 
 import Image from 'next/image'
 import { Product } from '../types'
@@ -14,11 +14,19 @@ interface InfoProps {
 const Info: React.FC<InfoProps> = ({data}) => {
 
 const cart = useCart()
-const onAddToCart= () => {
-   
 
-  cart.addItem(data);
+// const handleAddToCart = () => {
+//   const desiredQuantity = 1; // Change this to the desired quantity
+//   cart.addItem(data, desiredQuantity);
+// };
 
+
+const [quantity, setQuantity] = useState(1); // Default quantity is 1
+
+const handleAddToCart = () => {
+    cart.addItem(data, quantity);
+    // Reset quantity after adding to cart
+    setQuantity(1);
 };
 
 
@@ -31,13 +39,19 @@ const onAddToCart= () => {
        
         <h1 className='text-2xl font-semibold py-3'>${data.price}</h1>
         <h3   className='text-2xl py-3 '>Quantity</h3>
-        <input type="text" className='px-1 py-1 w-[100px] border-2'  value={cart.addItem.length}/>
-       
+        {/* <input type="text" className='px-1 py-1 w-[100px] border-2'  value={cart.addItem.length}/>
+   */}
 
-
+<input
+    type="number"
+    min="1" // Minimum value is 1
+    className='px-1 py-1 w-[100px] border-2'
+    value={quantity}
+    onChange={(e) => setQuantity(parseInt(e.target.value))}
+/>
         <div className="w-full   ">
       <div className=" w-full max-w-md rounded-2xl  pt-2">
-      <button  className='bg-green w-full px-5 py-4 text-bold text-xl text-white rounded-2xl' onClick={onAddToCart} >Add To Cart</button>
+      <button  className='bg-green w-full px-5 py-4 text-bold text-xl text-white rounded-2xl' onClick={handleAddToCart} >Add To Cart</button>
         <Disclosure  >
           {({ open }) => (
             <>

@@ -12,6 +12,7 @@ const FeaturedBanner:React.FC<FeaturedBannerProps>   = ({items}) => {
         <ProductCard   key={item.id}  data={item} />
       ))
       }
+
     </div>
   )
 }

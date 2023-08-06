@@ -2,12 +2,13 @@ export interface Product {
     id: string;
     category: Category;
     name: string;
-    price: string;
+    price: number; // Change the type to number
     isFeatured: boolean;
-   
+    quantity: number; // Add this property
     size: Size;
     color: Color;
     images: Image[]
+    
   };
   
   export interface Image {

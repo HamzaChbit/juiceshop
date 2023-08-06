@@ -79,7 +79,7 @@ CA 94158
                 <div className='flex  flex-col  md:flex-row justify-between  gap-x-10 py-8' >
                     <div   className='flex flex-col w-full '>
                     <label className='py-3 text-green text-2xl font-medium' >First Name</label>
-      <input type="text" name="user_firstname"    className='border-b-2 
+      <input type="text" name="user_name"    className='border-b-2 
 mt-1  w-full px-3 py-5 bg-hero  focus:border-b-green text-xl shadow-sm placeholder-slate-400
 focus:outline-none   border-green  focus:border-b-2 
 
@@ -89,7 +89,7 @@ focus:outline-none   border-green  focus:border-b-2
                     </div>
                     <div className='flex flex-col w-full'>
                     <label  className='py-3 text-green text-2xl font-medium'>Last Name</label>
-      <input type="text" name="user_lastname" className='border-b-2 border-green
+      <input type="text" name="user_name"  className='border-b-2 border-green
 mt-1  w-full px-3 py-5 bg-hero  focus:border-b-green text-xl shadow-sm placeholder-slate-400
 focus:outline-none     focus:border-b-2  
 

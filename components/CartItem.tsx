@@ -2,7 +2,7 @@
 
 
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 import { Product } from '../types'
 import useCart from '../context/use-cart'
 import { GrClose } from 'react-icons/gr'
@@ -12,12 +12,14 @@ import Link from 'next/link'
 
 interface CartItemProps {
     data : Product
+   
+
 }
 
 const CartItem:React.FC<CartItemProps> = ({data}) => {
 
 
-
+ 
 
     const cart = useCart()
     const onRemove = () => {
@@ -26,8 +28,6 @@ const CartItem:React.FC<CartItemProps> = ({data}) => {
 
     
 
-     
-     
     
    
   
@@ -52,8 +52,21 @@ const CartItem:React.FC<CartItemProps> = ({data}) => {
             <div className=' flex text-sm  flex-col  ' >
                 <h1  className='text-2xl ' >{data.name}</h1>
             <h1  className='text-bold text-green text-2xl' >   ${ data.price}</h1>
-          
-         
+          <div   className='flex flex-row w-40 ' >
+          <button  className='border-2  px-2 py-2'  onClick={() => cart.incrementQuantity(data.id)}>+</button>
+                    <input  className='border-2  w-10 ' 
+                        type="number"
+                        value={data.quantity}
+                        onChange={(e) => cart.editQuantity(data.id, parseInt(e.target.value))}
+                    />
+                    <button className='border-2 px-2 py-2' onClick={() => cart.decrementQuantity(data.id)}>-</button>
+          </div>
+        
+       
+           
+
+
+
             </div>
 
             <GrClose  size={33} onClick={onRemove} className='  text-green  cursor-pointer   ' />
