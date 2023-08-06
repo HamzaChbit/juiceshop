@@ -2,7 +2,7 @@
 import React from 'react'
 import useCart from '../../../context/use-cart'
 import CartItem from '../../../components/CartItem'
-import { AiTwotoneLock } from 'react-icons/aI'
+import { BsFillLockFill } from 'react-icons/bs'
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
 
@@ -55,7 +55,7 @@ route.push('/shop')
                    
                 </div>
                 <button className='bg-green text-white rounded-3xl px-1 font-bold text-2xl py-2' onClick={onCheckout} > Checkout</button>
-                <h1  className='text-black font-black text-xl justify-center items-center gap-x-5 py-5 flex flex-row' ><AiTwotoneLock/>     Secure Checkout</h1>
+                <h1  className='text-black font-black text-xl justify-center items-center gap-x-5 py-5 flex flex-row' ><BsFillLockFill/>     Secure Checkout</h1>
 
 
             </div>

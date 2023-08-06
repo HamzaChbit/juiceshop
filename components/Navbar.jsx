@@ -2,9 +2,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react'
-import { AiOutlineClose, AiOutlineShopping } from 'react-icons/aI';
+import {  BiShoppingBag } from 'react-icons/bi';
 import useCart from '../context/use-cart';
 import CartItem from './CartItem';
+import { GrClose } from 'react-icons/gr';
 
 const Navbar = () => {
   const [showMenu,setShowMenu] = useState(false)
@@ -46,7 +47,8 @@ const totalPrice = items.reduce((total, item) => {
 
       <div  className='text-green relative  cursor-pointer  ' onClick={()=>setMounted(true)}>
 
-      <AiOutlineShopping size={40} />
+      < BiShoppi
+      ngBag  size={40} />
       <span className='h-2 w-2 absolute top-3 left-4 text-black ' >
         {cart.items.length}
       </span>
@@ -79,7 +81,7 @@ const totalPrice = items.reduce((total, item) => {
       showMenu && (
         <div  className='fixed h-full w-full z-10  bg-bgfooter md:hidden 'onClick={()=>setShowMenu(false)}  >
           <div className='flex flex-row justify-between mx-5 my-5 text-green  cursor-pointer' >
-            <AiOutlineClose size={33} onClick={()=>setShowMenu(false)}/>
+            <GrClose  size={33} onClick={()=>setShowMenu(false)}/>
 
 
           </div>
@@ -103,7 +105,7 @@ const totalPrice = items.reduce((total, item) => {
         <div className='fixed md:w-[30%] w-[70%]  right-0 top-0 z-10 transition-2xl  h-auto bg-white' >
           <div className='flex flex-col justify-between' >
      <div className='flex justify-around flex-row    px-5 py-10 bg-bgfooter'>
-            <AiOutlineClose size={33} onClick={()=>setMounted(false)}  className='text-green  cursor-pointer' />
+            <GrClose  size={33} onClick={()=>setMounted(false)}  className='text-green  cursor-pointer' />
             <h1 className='text-3xl text-green font-bold ' >Cart</h1>
             </div>
             <div className='flex  min-h-[70vh]   max-h-[70vh]  overflow-x-hidden' >

@@ -5,7 +5,7 @@ import Image from 'next/image'
 import React from 'react'
 import { Product } from '../types'
 import useCart from '../context/use-cart'
-import { AiOutlineClose } from 'react-icons/aI'
+import { GrClose } from 'react-icons/gr'
 import Link from 'next/link'
 
 
@@ -56,7 +56,7 @@ const CartItem:React.FC<CartItemProps> = ({data}) => {
          
             </div>
 
-            <AiOutlineClose size={33} onClick={onRemove} className='  text-green  cursor-pointer   ' />
+            <GrClose  size={33} onClick={onRemove} className='  text-green  cursor-pointer   ' />
             </div>
             
          
