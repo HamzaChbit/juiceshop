@@ -46,7 +46,7 @@ const useCart = create(persist<CartStore>((set,get)=> ({
             item.id === id ? { ...item, quantity: quantity } : item
         );
         set({ items: updatedItems });
-        toast.success('Item quantity updated in the cart.');
+       
     },
     incrementQuantity: (id: string) => {
         const currentItems = get().items;
@@ -54,7 +54,7 @@ const useCart = create(persist<CartStore>((set,get)=> ({
             item.id === id ? { ...item, quantity: item.quantity + 1 } : item
         );
         set({ items: updatedItems });
-        toast.success('Item quantity incremented in the cart.');
+     
     },
     decrementQuantity: (id: string) => {
         const currentItems = get().items;
@@ -64,7 +64,7 @@ const useCart = create(persist<CartStore>((set,get)=> ({
                 : item
         );
         set({ items: updatedItems });
-        toast.success('Item quantity decremented in the cart.');
+       
     },
 
 

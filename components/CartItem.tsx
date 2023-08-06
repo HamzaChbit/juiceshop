@@ -36,7 +36,7 @@ const CartItem:React.FC<CartItemProps> = ({data}) => {
   return (
     <li className=' mt-10' >
   
-            <div  className=" flex flex-col justify-between    sm:ml-6 py-5 md:px-20 px-0 rounded-2xl w-full h-full" >
+            <div  className=" flex flex-col     py-5 md:px-5 px-0 rounded-2xl w-full h-full" >
      
         
 
@@ -56,6 +56,7 @@ const CartItem:React.FC<CartItemProps> = ({data}) => {
           <button  className='border-2  px-2 py-2'  onClick={() => cart.incrementQuantity(data.id)}>+</button>
                     <input  className='border-2  w-10 ' 
                         type="number"
+                        min="1" // Minimum value is 1
                         value={data.quantity}
                         onChange={(e) => cart.editQuantity(data.id, parseInt(e.target.value))}
                     />

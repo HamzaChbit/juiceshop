@@ -12,9 +12,12 @@ const PageCart = () => {
     const searchParams = useSearchParams();
     const items = useCart((state) => state.items);
     const removeAll = useCart((state) => state.removeAll);
-    const totalPrice = cart.items.reduce((total, item) => {
-        return total + Number(item.price)
-      }, 0);
+
+    const totalPrice = items.reduce((total, item) => {
+      return total + item.price * item.quantity;
+  }, 0);
+
+
       const route = useRouter()
       useEffect(() => {
         if (searchParams.get('success')) {
