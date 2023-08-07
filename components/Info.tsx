@@ -15,10 +15,6 @@ const Info: React.FC<InfoProps> = ({data}) => {
 
 const cart = useCart()
 
-// const handleAddToCart = () => {
-//   const desiredQuantity = 1; // Change this to the desired quantity
-//   cart.addItem(data, desiredQuantity);
-// };
 
 
 const [quantity, setQuantity] = useState(1); // Default quantity is 1

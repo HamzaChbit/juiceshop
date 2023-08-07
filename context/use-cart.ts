@@ -41,12 +41,13 @@ const useCart = create(persist<CartStore>((set,get)=> ({
     },
     removeAll : () => set({items:[]}),
     editQuantity: (id: string, quantity: number) => {
+        if(quantity >= 1 ) {
         const currentItems = get().items;
         const updatedItems = currentItems.map((item) =>
             item.id === id ? { ...item, quantity: quantity } : item
         );
         set({ items: updatedItems });
-       
+    }
     },
     incrementQuantity: (id: string) => {
         const currentItems = get().items;
@@ -67,16 +68,10 @@ const useCart = create(persist<CartStore>((set,get)=> ({
        
     },
 
-
-
-
 }),{
     name:'cart-storage',
     storage:createJSONStorage(()=>localStorage)
-}
-
-
-))
+}))
 
 export default useCart
 
