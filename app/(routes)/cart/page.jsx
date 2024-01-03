@@ -18,6 +18,13 @@ const PageCart = () => {
   }, 0);
 
 
+
+
+  const message = cart.items.map((item) => (
+    `name: ${item.name} |---| Quantity: ${item.quantity}`
+  )).join('\n');
+
+
       const route = useRouter()
       useEffect(() => {
         if (searchParams.get('success')) {
@@ -84,7 +91,7 @@ route.push('/shop')
                
                
                  </button>  */}
-                  <ReactWhatsapp number="+212 694977110" className='bg-green text-white rounded-3xl px-1 font-bold md:text-2xl text-xl  py-2' message='Hi' >Checkout in Whatsapp    </ReactWhatsapp>
+                  <ReactWhatsapp number="+212 694977110" className='bg-green text-white rounded-3xl px-1 font-bold md:text-2xl text-xl  py-2' message={message + `  |--------| Total Price :  ${totalPrice}`} >Checkout in Whatsapp    </ReactWhatsapp>
 
                  <h1  className='text-black font-black md:text-xl text-md justify-center items-center gap-x-5 py-5 flex flex-row' ><BsFillLockFill/>     Secure Checkout  <BsWhatsapp/>
                  </h1>
