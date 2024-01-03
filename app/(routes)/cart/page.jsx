@@ -2,11 +2,11 @@
 import React, { useEffect } from 'react'
 import useCart from '../../../context/use-cart'
 import CartItem from '../../../components/CartItem'
-import { BsFillLockFill } from 'react-icons/bs'
+import { BsFillLockFill, BsWhatsapp } from 'react-icons/bs'
 import { toast } from 'react-hot-toast'
 import axios from 'axios'
 import { useRouter, useSearchParams } from 'next/navigation'
-
+import ReactWhatsapp from 'react-whatsapp';
 const PageCart = () => {
     const cart = useCart()
     const searchParams = useSearchParams();
@@ -41,7 +41,7 @@ const PageCart = () => {
     
       //   window.location = response.data.url;
 
-        route.push('https://wa.me/0694977110')
+       
 
        }
     
@@ -55,7 +55,7 @@ route.push('/shop')
 
   return (
 
-    <div  className='md:mx-auto mx-4  max-w-7xl h-full justify-center items-center' >
+    <div  className='md:mx-auto mx-4  max-w-7xl md:h-[100vh]  h-full  justify-center items-center' >
         <div  className='flex md:flex-row  flex-col  py-10 md:gap-10  gap-0 ' >
             <div className='flex flex-col w-full h-auto'>
             <h1 className='text-green text-3xl py-5'  >My cart</h1>
@@ -80,8 +80,14 @@ route.push('/shop')
                     
                    
                 </div>
-                <button className='bg-green text-white rounded-3xl px-1 font-bold text-2xl py-2' onClick={onCheckout} > Checkout</button>
-                <h1  className='text-black font-black text-xl justify-center items-center gap-x-5 py-5 flex flex-row' ><BsFillLockFill/>     Secure Checkout</h1>
+                 {/* <button className='bg-green text-white rounded-3xl px-1 font-bold text-2xl py-2'  > 
+               
+               
+                 </button>  */}
+                  <ReactWhatsapp number="+212 694977110" className='bg-green text-white rounded-3xl px-1 font-bold md:text-2xl text-xl  py-2' message='Hi' >Checkout in Whatsapp    </ReactWhatsapp>
+
+                 <h1  className='text-black font-black md:text-xl text-md justify-center items-center gap-x-5 py-5 flex flex-row' ><BsFillLockFill/>     Secure Checkout  <BsWhatsapp/>
+                 </h1>
 
 
             </div>
