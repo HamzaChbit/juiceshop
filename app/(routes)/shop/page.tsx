@@ -9,7 +9,7 @@ const PageShop = async () => {
 
 
   const products = await getProducts({
-    categoryId: '4c8f02be-399c-4f43-a062-daab8e42936c',
+    categoryId: 'b38d7e67-a941-4902-975f-ee51d212ba85',
     isFeatured:true
   })
  
