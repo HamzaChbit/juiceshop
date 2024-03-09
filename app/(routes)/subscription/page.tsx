@@ -10,7 +10,7 @@ const PageSubscription = async () => {
   
   const Products = await getProducts({ 
    
-    categoryId: '30d21d5b-1e13-4f19-a56c-a937d6a51f7e',
+    categoryId: 'e13154eb-0376-4a53-9808-4eb6a446405d',
     isFeatured:true,
 
 
